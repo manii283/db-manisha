@@ -46,6 +46,21 @@ const _nav = [
     component: CNavTitle,
     name: 'Components',
   },
+
+  {
+    component: CNavGroup,
+    name: 'Contact',
+    to: '/contacts',
+    icon: <CIcon icon={cilCursor} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'ContactList',
+        to: '/contacts/index',
+      },
+    ],
+  },
+
   {
     component: CNavGroup,
     name: 'Base',

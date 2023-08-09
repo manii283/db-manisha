@@ -61,7 +61,7 @@ const routes = [
   { path: '/theme/typography', name: 'Typography', element: Typography },
 
   //contacts
-  { path: '/contacts', name: 'Base', element: Cards, exact: true },
+  { path: '/contacts', name: 'ContactList', element: ContactList, exact: true },
   { path: '/contacts/index', name: 'ContactList', element: ContactList },
 
   { path: '/base', name: 'Base', element: Cards, exact: true },
