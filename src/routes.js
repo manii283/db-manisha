@@ -6,6 +6,7 @@ const Typography = React.lazy(() => import('./views/theme/typography/Typography'
 
 // Contact
 const ContactList = React.lazy(() => import('./views/contacts/ContactList'))
+const AddContact = React.lazy(() => import('./views/contacts/AddContact'))
 
 // Base
 const Accordion = React.lazy(() => import('./views/base/accordion/Accordion'))
@@ -63,6 +64,7 @@ const routes = [
   //contacts
   { path: '/contacts', name: 'ContactList', element: ContactList, exact: true },
   { path: '/contacts/index', name: 'ContactList', element: ContactList },
+  { path: '/contacts/add', name: 'AddContact', element: AddContact },
 
   { path: '/base', name: 'Base', element: Cards, exact: true },
   { path: '/base/accordion', name: 'Accordion', element: Accordion },

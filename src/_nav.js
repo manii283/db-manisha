@@ -47,6 +47,8 @@ const _nav = [
     name: 'Components',
   },
 
+  // contact
+
   {
     component: CNavGroup,
     name: 'Contact',
@@ -57,6 +59,11 @@ const _nav = [
         component: CNavItem,
         name: 'ContactList',
         to: '/contacts/index',
+      },
+      {
+        component: CNavItem,
+        name: 'AddContact',
+        to: '/contacts/add',
       },
     ],
   },
