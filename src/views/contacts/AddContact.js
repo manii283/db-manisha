@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { CCol, CFormInput, CForm } from '@coreui/react'
+import { json } from 'react-router-dom'
 
 const AddContact = () => {
   // const [contact, setContact] = useState({})
-
   const [name, setName] = useState({})
-
-  useEffect(() => {
-    // uploadContactDetails()
-  }, [])
+  const [email, setEmail] = useState({})
+  const [phone, setPhone] = useState({})
+  const [message, setMessage] = useState({})
 
   const uploadContactDetails = async (event) => {
     event.preventDefault()
@@ -16,7 +15,7 @@ const AddContact = () => {
     const requestOptions = {
       method: 'POST',
       // headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify[{ name: 'name' }],
+      body: JSON.stringify({ name: name, email: email, phone: phone, message: message }),
     }
 
     const response = await fetch('http://localhost:8000/contacts', requestOptions)
@@ -39,13 +38,31 @@ const AddContact = () => {
           />
         </CCol>
         <CCol md={6}>
-          <CFormInput type="text" id="email" name="email" label="Email" />
+          <CFormInput
+            type="text"
+            id="email"
+            name="email"
+            label="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </CCol>
         <CCol md={6}>
-          <CFormInput type="number" id="phone" name="phone" label="Phone" />
+          <CFormInput
+            type="number"
+            id="phone"
+            name="phone"
+            label="Phone"
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </CCol>
         <CCol md={12}>
-          <CFormInput type="text" id="message" name="message" label="Message" />
+          <CFormInput
+            type="text"
+            id="message"
+            name="message"
+            label="Message"
+            onChange={(e) => setMessage(e.target.value)}
+          />
         </CCol>
         <CCol md={12}>
           <CFormInput type="submit" name="submit" />
